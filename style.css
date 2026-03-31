@@ -1,0 +1,172 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #1a5c3a;
+  --ink:   #1a1a1a;
+  --soft:  #555;
+  --rule:  #ddd;
+  --bg:    #fff;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Nav ── */
+nav {
+  margin-bottom: 52px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+nav a { color: var(--green); }
+nav a.active { font-weight: bold; }
+.nav-sep { color: #aaa; margin: 0 4px; }
+
+/* ── Pages ── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── Bio figure ── */
+.bio-figure {
+  margin-bottom: 28px;
+}
+.bio-figure img {
+  max-width: 180px;
+  display: block;
+  /* swap border-radius values to change shape:
+     50% = circle, 0 = square, 8px = rounded */
+  border-radius: 4px;
+}
+.bio-figure figcaption {
+  font-size: 13px;
+  color: var(--soft);
+  font-family: 'Courier New', monospace;
+  margin-top: 6px;
+}
+
+/* ── Bio text ── */
+.bio-name { font-size: 22px; font-weight: bold; margin-bottom: 4px; }
+.bio-role {
+  color: var(--soft); font-size: 15px;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 24px;
+}
+.bio-body p { margin-bottom: 14px; color: #333; }
+
+.bio-info {
+  margin: 28px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13.5px;
+  color: var(--soft);
+  line-height: 2.1;
+}
+
+.bio-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+.bio-links a {
+  font-family: 'Courier New', monospace;
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 1px;
+}
+
+/* ── Section headings ── */
+h2 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 40px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Items (positions, education) ── */
+.item { margin-bottom: 16px; }
+.item-head { font-weight: bold; font-size: 15px; }
+.item-sub  { font-size: 14px; color: var(--soft); }
+
+/* ── Plain list ── */
+ul.plain { list-style: none; padding: 0; }
+ul.plain li {
+  font-size: 14.5px; color: #333;
+  padding: 7px 0; border-bottom: 1px solid #eee;
+}
+ul.plain li:last-child { border-bottom: none; }
+
+/* ── Publications ── */
+#pub-list h3 {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--green);
+  letter-spacing: .06em;
+  margin: 36px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.pub { margin-bottom: 22px; }
+.pub-title { font-size: 15px; font-weight: bold; line-height: 1.45; margin-bottom: 3px; }
+.pub-meta  { font-size: 14px; color: var(--soft); margin-bottom: 4px; }
+.pub-links { font-family: 'Courier New', monospace; font-size: 13px; }
+.pub-links a { margin-right: 6px; }
+.pub-links a:hover { text-decoration: underline; }
+
+/* ── News list ── */
+.news-list { list-style: none; padding: 0; }
+.news-list li {
+  display: flex;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14.5px;
+  color: #333;
+  align-items: baseline;
+}
+.news-list li:first-child { border-top: 1px solid #eee; }
+.news-date {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--green);
+  white-space: nowrap;
+  min-width: 72px;
+}
+
+/* ── Contact ── */
+.contact-block {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--soft);
+  line-height: 2.1;
+}
+.contact-block strong { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  body { padding: 32px 18px 60px; font-size: 15px; }
+  nav  { font-size: 13px; }
+}
+
+/* ── News toggle button ── */
+.news-toggle {
+  background: none;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--green);
+  cursor: pointer;
+  padding: 6px 0 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.news-toggle:hover { opacity: .7; }

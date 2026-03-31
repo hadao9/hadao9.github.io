@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ha Dao Thi Thu</title>
+  <meta name="description" content="Postdoctoral Researcher at MPI Informatics. Online privacy, data protection, network measurement." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home"         class="tab-link" data-tab="home">Home</a>
+  <span class="nav-sep">/</span>
+  <a href="#publications" class="tab-link" data-tab="publications">Publications</a>
+  <span class="nav-sep">/</span>
+  <a href="#teaching"     class="tab-link" data-tab="teaching">Teaching</a>
+  <span class="nav-sep">/</span>
+  <a href="#service"      class="tab-link" data-tab="service">Service</a>
+  <span class="nav-sep">/</span>
+  <a href="#contact"      class="tab-link" data-tab="contact">Contact</a>
+</nav>
+
+<!-- ═══ HOME ═══ -->
+<div id="home" class="page">
+
+  <!-- About -->
+  <div class="bio-header">
+    <figure class="bio-figure">
+      <img src="assets/photo.jpg" alt="Ha Dao Thi Thu" />
+    </figure>
+    <div class="bio-header-text">
+      <p class="bio-name">Ha Dao Thi Thu <span style="font-weight:normal;color:#888;font-size:16px;">— Đào Thị Thu Hà</span></p>
+      <p class="bio-role">Postdoctoral Researcher · INET Group, MPI Informatics</p>
+      <div class="bio-info">
+        📍 Campus E1 4, Room 517 · 66123 Saarbrücken, Germany<br>
+        📞 +49 681 9325 3513<br>
+        🔗 <a href="https://www.mpi-inf.mpg.de/departments/inet/people/ha-dao-thi-thu" target="_blank" rel="noopener">MPI profile</a>
+      </div>
+      <div class="bio-links">
+        <a href="https://scholar.google.com/citations?user=xiGSEtYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio-body">
+    <p>
+      I am a postdoc in the
+      <a href="https://www.mpi-inf.mpg.de/departments/inet" target="_blank" rel="noopener">Internet Architecture (INET)</a>
+      group at the Max Planck Institute for Informatics, Saarbrücken, Germany.
+    </p>
+    <p>
+      My research focuses on <strong>online privacy</strong>, <strong>data protection</strong>, and
+      <strong>network measurement</strong> — building tools and conducting empirical studies to understand
+      how the web collects and leaks user data, from cookie consent mechanisms to advertising trackers.
+    </p>
+    <p>I am Vietnamese and enjoy cooking and eating different kinds of food.</p>
+  </div>
+
+  <!-- Recent News — edit news.js to add/remove items -->
+  <h2>Recent News</h2>
+  <ul class="news-list" id="news-list"></ul>
+
+  <!-- Selected Publications -->
+  <!--
+    Mark a paper as selected by adding  selected = {yes}  to its .bib entry.
+    If none are marked, the 3 most recent papers are shown automatically.
+  -->
+  <h2>Selected Publications</h2>
+  <div id="home-pub-list"></div>
+  <p style="margin-top:16px;font-size:13.5px;font-family:'Courier New',monospace;">
+    <a href="#publications" class="tab-link" data-tab="publications">All publications →</a>
+  </p>
+
+  <!-- Education & Positions -->
+  <h2>Education</h2>
+  <div class="item">
+    <div class="item-head">PhD in Informatics</div>
+    <div class="item-sub">NII / SOKENDAI, Japan · 2019–2022</div>
+  </div>
+  <div class="item">
+    <div class="item-head">MSc in Computer Science</div>
+    <div class="item-sub">VNUHCM–UIT, Vietnam · 2016–2019</div>
+  </div>
+  <div class="item">
+    <div class="item-head">B.Eng in Computer Networks &amp; Communications</div>
+    <div class="item-sub">VNUHCM–UIT, Vietnam · 2011–2016</div>
+  </div>
+
+  <h2>Positions</h2>
+  <div class="item">
+    <div class="item-head">Postdoctoral Researcher</div>
+    <div class="item-sub">INET Group, MPI Informatics, Germany · Apr 2023 – present</div>
+  </div>
+  <div class="item">
+    <div class="item-head">JSPS Research Fellow (Postdoctoral)</div>
+    <div class="item-sub">National Institute of Informatics, Japan · Oct 2022 – Mar 2023</div>
+  </div>
+  <div class="item">
+    <div class="item-head">Research Intern</div>
+    <div class="item-sub">INET Group, MPI Informatics, Germany · Jun–Aug 2022</div>
+  </div>
+  <div class="item">
+    <div class="item-head">Teaching Assistant</div>
+    <div class="item-sub">VNUHCM–UIT, Vietnam · Jul 2016 – Apr 2019</div>
+  </div>
+
+  <h2>Awards</h2>
+  <ul class="plain">
+    <li>NII Best Student Award — 2022</li>
+    <li>JSPS Fellowship for Young Scientists — 2022</li>
+    <li>Honourable Mention, IEEE/IFIP TMA — 2020</li>
+  </ul>
+
+</div>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<div id="publications" class="page">
+  <!--
+    Papers are loaded from publications.bib — edit that file to add or update papers.
+    Preprint PDFs go in assets/preprints/ and are referenced in the .bib file.
+  -->
+  <div id="pub-list"></div>
+  <p style="margin-top:32px;font-size:13.5px;color:#888;font-family:'Courier New',monospace;">
+    Full list: <a href="https://scholar.google.com/citations?user=xiGSEtYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+  </p>
+</div>
+
+<!-- ═══ TEACHING ═══ -->
+<div id="teaching" class="page">
+  <h2>Teaching</h2>
+  <div class="item">
+    <div class="item-head">Introduction to Computer Networking &amp; Network Programming</div>
+    <div class="item-sub">Teaching Assistant · VNUHCM–UIT, Vietnam · 2016–2019</div>
+  </div>
+</div>
+
+<!-- ═══ SERVICE ═══ -->
+<div id="service" class="page">
+  <h2>Program Committees</h2>
+  <ul class="plain">
+    <li>PETS — 2024, 2025, 2026</li>
+    <li>PAM — 2023, 2025</li>
+    <li>SOICT — 2022</li>
+  </ul>
+
+  <h2>Reviewing</h2>
+  <ul class="plain">
+    <li>COMCOM — 2024</li>
+    <li>SoICT — 2024</li>
+    <li>PETS — 2023</li>
+    <li>TWEB — 2021</li>
+  </ul>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div id="contact" class="page">
+  <div class="contact-block">
+    <strong>Email</strong><br>
+    <a href="https://notes.mpi-inf.mpg.de/intranet/mpii/people.nsf/email!ReadForm&UID=24110&Name=Dao%2c%20Ha"
+       target="_blank" rel="noopener">Get email via MPI portal ↗</a>
+    <br><br>
+    <strong>Address</strong><br>
+    Max-Planck-Institut für Informatik<br>
+    Campus E1 4, Room 517<br>
+    66123 Saarbrücken, Germany
+    <br><br>
+    <strong>Phone</strong><br>
+    +49 681 9325 3513
+    <br><br>
+    <strong>Links</strong><br>
+    <a href="https://scholar.google.com/citations?user=xiGSEtYAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a><br>
+    <a href="https://www.mpi-inf.mpg.de/departments/inet/people/ha-dao-thi-thu" target="_blank" rel="noopener">MPI Profile ↗</a>
+  </div>
+</div>
+
+
+<footer>
+  &copy; 2026 Ha Dao Thi Thu &mdash; INET Group, Max Planck Institute for Informatics
+</footer>
+
+<script src="news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
