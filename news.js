@@ -8,7 +8,10 @@
 // ─────────────────────────────────────────────
 
 const NEWS = [
-
+{
+    date: "March 2026",
+    text: 'Paper accepted at <strong>ACM XXX 2026</strong> — "XXX..."',
+  },
   {
     date: "December 2025",
     text: 'Paper accepted at <strong>ACM ASIACCS 2026</strong> — "Nobody should control the end user..."',
