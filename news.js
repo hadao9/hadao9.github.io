@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────
+b// ─────────────────────────────────────────────
 //  news.js  —  edit this file to add/remove news.
 //  Newest items should go at the TOP of the list.
 //
@@ -10,7 +10,7 @@
 const NEWS = [
 
   {
-    date: "Jun 2026",
+    date: "December 2025",
     text: 'Paper accepted at <strong>ACM ASIACCS 2026</strong> — "Nobody should control the end user..."',
   },
   {
