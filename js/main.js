@@ -193,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function showTab(id) {
     tabs.forEach(t  => t.classList.toggle('active', t.dataset.tab === id));
     pages.forEach(p => p.classList.toggle('active', p.id === id));
-    history.replaceState(null, '', '#' + id);
+    history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
+
   }
 
   tabs.forEach(t => t.addEventListener('click', e => {
