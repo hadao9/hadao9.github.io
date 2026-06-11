@@ -13,7 +13,9 @@ function renderNews() {
   NEWS.forEach((item, i) => {
     const li = document.createElement('li');
     li.style.display = i >= NEWS_VISIBLE ? 'none' : '';
-    li.innerHTML = `<span class="news-date">${item.date}</span>${item.text}`;
+    // li.innerHTML = `<span class="news-date">${item.date}</span>${item.text}`;
+    li.innerHTML = `<span class="news-date">${item.date}</span><span class="news-text">${item.text}</span>`;
+
     container.appendChild(li);
   });
 
@@ -34,6 +36,25 @@ function renderNews() {
 }
 
 /* ── Minimal BibTeX parser ── */
+// function parseBib(text) {
+//   const entries = [];
+//   const entryRe = /@\w+\s*\{[^@]*/g;
+//   let match;
+//   while ((match = entryRe.exec(text)) !== null) {
+//     const block = match[0];
+//     const fields = {};
+//     const fieldRe = /(\w+)\s*=\s*(?:\{([^}]*)\}|"([^"]*)"|(\d+))/g;
+//     let f;
+//     while ((f = fieldRe.exec(block)) !== null) {
+//       const key = f[1].toLowerCase();
+//       const val = (f[2] ?? f[3] ?? f[4] ?? '').trim();
+//       fields[key] = val;
+//     }
+//     if (fields.year && fields.title) entries.push(fields);
+//   }
+//   return entries.sort((a, b) => b.year - a.year);
+// }
+
 function parseBib(text) {
   const entries = [];
   const entryRe = /@\w+\s*\{[^@]*/g;
@@ -41,13 +62,31 @@ function parseBib(text) {
   while ((match = entryRe.exec(text)) !== null) {
     const block = match[0];
     const fields = {};
-    const fieldRe = /(\w+)\s*=\s*(?:\{([^}]*)\}|"([^"]*)"|(\d+))/g;
+
+    // Walk char-by-char to extract fields with nested-brace support
+    const fieldStartRe = /(\w+)\s*=\s*/g;
     let f;
-    while ((f = fieldRe.exec(block)) !== null) {
+    while ((f = fieldStartRe.exec(block)) !== null) {
       const key = f[1].toLowerCase();
-      const val = (f[2] ?? f[3] ?? f[4] ?? '').trim();
-      fields[key] = val;
+      let val = '';
+      let pos = f.index + f[0].length;
+      if (block[pos] === '{') {
+        let depth = 0, i = pos;
+        while (i < block.length) {
+          if (block[i] === '{') depth++;
+          else if (block[i] === '}') { depth--; if (depth === 0) { val = block.slice(pos + 1, i); break; } }
+          i++;
+        }
+      } else if (block[pos] === '"') {
+        const end = block.indexOf('"', pos + 1);
+        if (end !== -1) val = block.slice(pos + 1, end);
+      } else {
+        const m = block.slice(pos).match(/^(\d+)/);
+        if (m) val = m[1];
+      }
+      fields[key] = val.trim();
     }
+
     if (fields.year && fields.title) entries.push(fields);
   }
   return entries.sort((a, b) => b.year - a.year);
