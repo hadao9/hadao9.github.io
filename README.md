@@ -1,4 +1,4 @@
-# Ha Dao Thi Thu — Academic Website
+# Ha Dao — Academic Website
 
 ## File structure
 
