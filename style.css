@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green: #FFA500;
+  --orange: #FFA500;
   --ink:   #1a1a1a;
   --soft:  #555;
   --rule:  #ddd;
@@ -9,7 +9,7 @@
 }
 
 html {
-  background: #FFFFFF;
+  background: #f3f2ef;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   body { margin: 0; box-shadow: none; border-radius: 0; }
 }
 
-a { color: var(--green); text-decoration: none; }
+a { color: var(--orange); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ── Nav ── */
@@ -39,9 +39,9 @@ nav {
   padding-bottom: 16px;
   border-bottom: 1px solid var(--rule);
   font-family: 'Courier New', Courier, monospace;
-  font-size: 15px;
+  font-size: 18px;
 }
-nav a { color: var(--green); }
+nav a { color: var(--orange); }
 nav a.active { font-weight: bold; }
 .nav-sep { color: #aaa; margin: 0 4px; }
 
@@ -100,7 +100,7 @@ nav a.active { font-weight: bold; }
 .bio-links a {
   font-family: 'Courier New', monospace;
   font-size: 14.5px;
-  border-bottom: 1px solid var(--green);
+  border-bottom: 1px solid var(--orange);
   padding-bottom: 1px;
 }
 
@@ -110,12 +110,12 @@ nav a.active { font-weight: bold; }
 
 /* ── Section headings ── */
 h2 {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: bold;
   font-family: 'Courier New', monospace;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--orange);
   margin: 30px 0 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
@@ -138,8 +138,8 @@ ul.plain li:last-child { border-bottom: none; }
 /* ── Publications ── */
 #pub-list h3 {
   font-family: 'Courier New', monospace;
-  font-size: 13px;
-  color: var(--green);
+  font-size: 16px;
+  color: var(--orange);
   letter-spacing: .06em;
   margin: 26px 0 10px;
   padding-bottom: 6px;
@@ -168,7 +168,7 @@ ul.plain li:last-child { border-bottom: none; }
 .news-date {
   font-family: 'Courier New', monospace;
   font-size: 12px;
-  color: var(--green);
+  color: var(--orange);
   white-space: nowrap;
   min-width: 72px;
 }
@@ -200,7 +200,7 @@ ul.plain li:last-child { border-bottom: none; }
   border: none;
   font-family: 'Courier New', monospace;
   font-size: 13px;
-  color: var(--green);
+  color: var(--orange);
   cursor: pointer;
   padding: 6px 0 0;
   text-decoration: underline;
