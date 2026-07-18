@@ -8,6 +8,10 @@
 // ─────────────────────────────────────────────
 
 const NEWS = [
+  {
+    date: "<strong>July 2026</strong>",
+    text: 'Our paper entitled <em>Detecting and Measuring gclid-Based Tracking on the Web</em> has been accepted at <strong>ACM ACM CCS 2026</strong>. Congrats to <strong>Tien-Huy Pham</strong> for the amazing work!',
+  },
 {
     date: "<strong>Jun 2026</strong>",
     text: 'Our paper entitled <em>Securing IaC: Detecting Terraform Security Smells with fine-tuned LLMs</em> has been accepted at <strong>Journal of Information Processing</strong>. Congrats to <strong>Quoc-Huy Vo</strong> for leading the effort!',

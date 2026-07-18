@@ -1,22 +1,33 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green: #1a5c3a;
+  --green: #FFA500;
   --ink:   #1a1a1a;
   --soft:  #555;
   --rule:  #ddd;
   --bg:    #fff;
 }
 
+html {
+  background: #FFFFFF;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 48px 32px 80px;
+  max-width: 1100px;
+  margin: 28px auto 60px;
+  padding: 48px clamp(32px, 6vw, 96px) 72px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 18px 46px rgba(0,0,0,.05);
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  html { background: var(--bg); }
+  body { margin: 0; box-shadow: none; border-radius: 0; }
 }
 
 a { color: var(--green); text-decoration: none; }
@@ -24,7 +35,9 @@ a:hover { text-decoration: underline; }
 
 /* ── Nav ── */
 nav {
-  margin-bottom: 52px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
   font-family: 'Courier New', Courier, monospace;
   font-size: 15px;
 }
@@ -36,16 +49,26 @@ nav a.active { font-weight: bold; }
 .page { display: none; }
 .page.active { display: block; }
 
-/* ── Bio figure ── */
+/* ── Bio header (photo + text side by side) ── */
+.bio-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
 .bio-figure {
-  margin-bottom: 28px;
+  flex: 0 0 auto;
+  margin-bottom: 0;
 }
 .bio-figure img {
-  max-width: 180px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   display: block;
   /* swap border-radius values to change shape:
      50% = circle, 0 = square, 8px = rounded */
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .bio-figure figcaption {
   font-size: 13px;
@@ -54,29 +77,35 @@ nav a.active { font-weight: bold; }
   margin-top: 6px;
 }
 
+.bio-header-text { flex: 1 1 auto; min-width: 0; }
+
 /* ── Bio text ── */
-.bio-name { font-size: 22px; font-weight: bold; margin-bottom: 4px; }
+.bio-name { font-size: 30px; font-weight: bold; margin-bottom: 6px; }
 .bio-role {
-  color: var(--soft); font-size: 15px;
+  color: var(--soft); font-size: 17px;
   font-family: 'Courier New', monospace;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .bio-body p { margin-bottom: 14px; color: #333; }
 
 .bio-info {
-  margin: 28px 0;
+  margin: 0 0 18px;
   font-family: 'Courier New', monospace;
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--soft);
-  line-height: 2.1;
+  line-height: 1.9;
 }
 
-.bio-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+.bio-links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
 .bio-links a {
   font-family: 'Courier New', monospace;
-  font-size: 13.5px;
+  font-size: 14.5px;
   border-bottom: 1px solid var(--green);
   padding-bottom: 1px;
+}
+
+@media (max-width: 560px) {
+  .bio-header { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 
 /* ── Section headings ── */
@@ -87,13 +116,14 @@ h2 {
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--green);
-  margin: 40px 0 14px;
+  margin: 30px 0 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
 }
+h2:first-of-type { margin-top: 8px; }
 
 /* ── Items (positions, education) ── */
-.item { margin-bottom: 16px; }
+.item { margin-bottom: 12px; }
 .item-head { font-weight: bold; font-size: 15px; }
 .item-sub  { font-size: 14px; color: var(--soft); }
 
@@ -111,11 +141,12 @@ ul.plain li:last-child { border-bottom: none; }
   font-size: 13px;
   color: var(--green);
   letter-spacing: .06em;
-  margin: 36px 0 12px;
+  margin: 26px 0 10px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
 }
-.pub { margin-bottom: 22px; }
+#pub-list h3:first-child { margin-top: 0; }
+.pub { margin-bottom: 16px; }
 .pub-title { font-size: 15px; font-weight: bold; line-height: 1.45; margin-bottom: 3px; }
 .pub-meta  { font-size: 14px; color: var(--soft); margin-bottom: 4px; }
 .pub-links { font-family: 'Courier New', monospace; font-size: 13px; }
