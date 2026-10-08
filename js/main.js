@@ -93,20 +93,33 @@ function parseBib(text) {
 }
 
 /* Format "Last, First and Last2, First2" -> "F. Last, F2. Last2" */
+
 function formatAuthors(raw) {
   return raw.split(' and ').map(a => {
     a = a.trim();
+
+    // Highlight your name
+    const isMe = a === 'Dao, Ha' || a === 'Ha Dao';
+
+    let formatted;
     if (a.includes(',')) {
       const [last, first] = a.split(',').map(s => s.trim());
       const initial = first ? first[0] + '.' : '';
-      return initial ? `${initial} ${last}` : last;
+      formatted = initial ? `${initial} ${last}` : last;
+    } else {
+      const parts = a.split(' ');
+      if (parts.length === 1) {
+        formatted = a;
+      } else {
+        const last = parts.pop();
+        formatted = `${parts[0][0]}. ${last}`;
+      }
     }
-    const parts = a.split(' ');
-    if (parts.length === 1) return a;
-    const last = parts.pop();
-    return `${parts[0][0]}. ${last}`;
+
+    return isMe ? `<strong>${formatted}</strong>` : formatted;
   }).join(', ');
 }
+
 
 /* Build link row
    - Preprint / PDF  -> same tab (no target)
